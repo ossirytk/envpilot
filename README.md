@@ -21,7 +21,102 @@ envpilot lets AI assistants safely inspect environment variable files. It reads,
 
 ## Installation
 
-> Coming soon.
+**Requires:** Python 3.12+, [uv](https://docs.astral.sh/uv/)
+
+### Option A — Install as a uv tool (recommended)
+
+```sh
+uv tool install git+https://github.com/ossirytk/envpilot
+```
+
+Verify:
+
+```sh
+envpilot --help
+```
+
+To update later:
+
+```sh
+uv tool upgrade envpilot
+```
+
+### Option B — Clone and run from source
+
+```sh
+git clone https://github.com/ossirytk/envpilot
+cd envpilot
+uv sync
+```
+
+---
+
+## Configuration
+
+### GitHub Copilot CLI
+
+Add to `~/.copilot/mcp-config.json`:
+
+**Option A (installed tool):**
+
+```json
+{
+  "mcpServers": {
+    "envpilot": {
+      "type": "stdio",
+      "command": "envpilot"
+    }
+  }
+}
+```
+
+**Option B (local clone):**
+
+```json
+{
+  "mcpServers": {
+    "envpilot": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/envpilot", "envpilot"]
+    }
+  }
+}
+```
+
+### VS Code Copilot
+
+Add to your user-level MCP config file:
+- **Linux:** `~/.config/Code/User/mcp.json`
+- **macOS:** `~/Library/Application Support/Code/User/mcp.json`
+- **Windows:** `%APPDATA%\Code\User\mcp.json`
+
+**Option A:**
+
+```json
+{
+  "servers": {
+    "envpilot": {
+      "type": "stdio",
+      "command": "envpilot"
+    }
+  }
+}
+```
+
+**Option B:**
+
+```json
+{
+  "servers": {
+    "envpilot": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/envpilot", "envpilot"]
+    }
+  }
+}
+```
 
 ---
 
