@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "envpilot": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/envpilot", "envpilot"],
+      "tools": ["*"]
+    }
+  }
+}
