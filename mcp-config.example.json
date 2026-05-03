@@ -3,8 +3,7 @@
     "envpilot": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "--directory", "/path/to/envpilot", "envpilot"],
-      "tools": ["*"]
+      "args": ["run", "--directory", "/path/to/envpilot", "envpilot"]
     }
   }
 }
